@@ -1,6 +1,6 @@
-using servereksamen;
-
 var builder = WebApplication.CreateBuilder(args);
+
+builder.WebHost.UseUrls("http://localhost:5068");
 
 // Register LibraryContext as a service
 builder.Services.AddDbContext<LibraryContext>();

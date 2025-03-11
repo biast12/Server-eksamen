@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using servereksamen;
 
 public static class GenresEndpoints
 {
@@ -34,6 +33,7 @@ public static class GenresEndpoints
                 return Results.NotFound();
             }
             genres.Name = inputMember.Name;
+            genres.BgColor = inputMember.BgColor;
             await db.SaveChangesAsync();
             return Results.NoContent();
         });

@@ -1,5 +1,5 @@
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Inria Sans', sans-serif;
 }
 
 a, .btn-link {
@@ -42,10 +42,109 @@ h1:focus {
     color: white;
 }
 
-    .blazor-error-boundary::after {
-        content: "An error has occurred."
-    }
+.blazor-error-boundary::after {
+    content: "An error has occurred."
+}
 
 .darker-border-checkbox.form-check-input {
     border-color: #929292;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.bg-header {
+    background-color: #6a90a0;
+    position: relative;
+}
+
+.bg-header-size {
+    height: 300px;
+}
+
+.bg-header-size2 {
+    height: 150px;
+    margin-bottom: 70px;
+}
+
+.bg-header h1 {
+    color: white;
+    font-weight: bolder;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    padding: 1rem;
+}
+
+.text-size {
+    font-size: 3rem;
+}
+
+.text-size2 {
+    font-size: 2.2rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;
+    margin: 50px 100px;
+}
+
+.grid-item {
+    border: 1px solid #ccc;
+    margin: 30px;
+    text-align: center;
+    height: 200px;
+    position: relative;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1)
+}
+
+.grid-item h3 {
+    color: black;
+    font-weight: bolder;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    padding: 1rem;
+}
+
+.back-button {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    padding: 10px;
+    color: #000;
+    background-color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.back-button:hover {
+    background-color: #f0f0f0;
+}
+
+.genre-box {
+    position: relative;
+    height: 100px;
+}
+
+.genre {
+    font-weight: bolder;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    padding: 0.5rem;
+}
+
+.book {
+    padding-top: 20px;
 }

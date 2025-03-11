@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using servereksamen;
 
 public static class BooksEndpoints
 {
@@ -15,6 +14,15 @@ public static class BooksEndpoints
             if (data == null)
             {
                 return Results.NotFound();
+            }
+            return Results.Ok(data);
+        });
+
+        routes.MapGet("/books/genreID/{id}", async (int id, LibraryContext db) => {
+            var data = await db.Set<Books>().Where(b => b.GenreID == id.ToString()).ToListAsync();
+            if (data == null || !data.Any())
+            {
+                return Results.Ok(new[] { new { } });
             }
             return Results.Ok(data);
         });

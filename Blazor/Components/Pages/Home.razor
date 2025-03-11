@@ -1,7 +1,36 @@
 ﻿@page "/"
+@rendermode InteractiveServer
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Bibliothèque Publique</PageTitle>
 
-<h1>Hello, world!</h1>
+<header class="bg-header bg-header-size">
+    <h1 class="text-size uppercase">bibliothèque publique</h1>
+</header>
 
-Welcome to your new app.
+@if (genres == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="grid-container">
+        @foreach (var genre in genres)
+        {
+            <a class="grid-item" style="background-color:#@genre.bgColor" href="/genre/@genre.id">
+                <h3>@genre.name</h3>
+            </a>
+        }
+    </div>
+}
+
+@code {
+    private List<Genres>? genres;
+
+    [Inject]
+    private LibraryService LibraryService { get; set; } = default!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        genres = await LibraryService.GetGenresAsync();
+    }
+}

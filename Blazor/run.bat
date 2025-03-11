@@ -1,1 +1,1 @@
-dotnet watch run --no-hot-reload
+dotnet watch run
