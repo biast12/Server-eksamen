@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "h6sLERdfZvw=",
+  "dgSpecHash": "DoDJ9RwiqVo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\tobia\\Desktop\\servereksamen\\servereksamen.csproj",
+  "projectFilePath": "C:\\Users\\tobia\\Desktop\\servereksamen\\servereksamen\\servereksamen.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tobia\\.nuget\\packages\\microsoft.aspnetcore.diagnostics\\2.3.0\\microsoft.aspnetcore.diagnostics.2.3.0.nupkg.sha512",
     "C:\\Users\\tobia\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.abstractions\\2.3.0\\microsoft.aspnetcore.diagnostics.abstractions.2.3.0.nupkg.sha512",

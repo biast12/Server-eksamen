@@ -25,9 +25,9 @@ C:\Users\tobia\Desktop\servereksamen\Blazor\obj\Debug\net8.0\staticwebassets\msb
 C:\Users\tobia\Desktop\servereksamen\Blazor\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Blazor.props
 C:\Users\tobia\Desktop\servereksamen\Blazor\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Blazor.props
 C:\Users\tobia\Desktop\servereksamen\Blazor\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\tobia\Desktop\servereksamen\Blazor\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\tobia\Desktop\servereksamen\Blazor\obj\Debug\net8.0\Blazor.dll
 C:\Users\tobia\Desktop\servereksamen\Blazor\obj\Debug\net8.0\refint\Blazor.dll
 C:\Users\tobia\Desktop\servereksamen\Blazor\obj\Debug\net8.0\Blazor.pdb
 C:\Users\tobia\Desktop\servereksamen\Blazor\obj\Debug\net8.0\Blazor.genruntimeconfig.cache
 C:\Users\tobia\Desktop\servereksamen\Blazor\obj\Debug\net8.0\ref\Blazor.dll
+C:\Users\tobia\Desktop\servereksamen\Blazor\obj\Debug\net8.0\Blazor.sourcelink.json

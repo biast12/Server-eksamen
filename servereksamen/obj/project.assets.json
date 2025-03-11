@@ -1881,11 +1881,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tobia\\Desktop\\servereksamen\\servereksamen.csproj",
+      "projectUniqueName": "C:\\Users\\tobia\\Desktop\\servereksamen\\servereksamen\\servereksamen.csproj",
       "projectName": "servereksamen",
-      "projectPath": "C:\\Users\\tobia\\Desktop\\servereksamen\\servereksamen.csproj",
+      "projectPath": "C:\\Users\\tobia\\Desktop\\servereksamen\\servereksamen\\servereksamen.csproj",
       "packagesPath": "C:\\Users\\tobia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tobia\\Desktop\\servereksamen\\obj\\",
+      "outputPath": "C:\\Users\\tobia\\Desktop\\servereksamen\\servereksamen\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
