@@ -7,30 +7,30 @@
     <h1 class="text-size uppercase">bibliothèque publique</h1>
 </header>
 
-@if (genres == null)
+@if (categories == null)
 {
     <p>Loading...</p>
 }
 else
 {
     <div class="grid-container">
-        @foreach (var genre in genres)
+        @foreach (var category in categories)
         {
-            <a class="grid-item" style="background-color:#@genre.bgColor" href="/genre/@genre.id">
-                <h3>@genre.name</h3>
+            <a class="grid-item" href="/category/@category.id">
+                <h3>@category.icon @category.name</h3>
             </a>
         }
     </div>
 }
 
 @code {
-    private List<Genres>? genres;
+    private List<Categories>? categories;
 
     [Inject]
     private LibraryService LibraryService { get; set; } = default!;
 
     protected override async Task OnInitializedAsync()
     {
-        genres = await LibraryService.GetGenresAsync();
+        categories = await LibraryService.GetCategoriesAsync();
     }
 }

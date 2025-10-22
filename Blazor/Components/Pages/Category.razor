@@ -1,0 +1,61 @@
+@page "/category/{categoryID:int}"
+@rendermode InteractiveServer
+
+@if (category == null)
+{
+    <PageTitle>Bibliothèque Publique</PageTitle>
+}
+else
+{
+    <PageTitle>@category.name - Bibliothèque Publique</PageTitle>
+}
+
+<header class="bg-header bg-header-size2">
+    <a href="/" class="back-button">← Back</a>
+    <h1 class="text-size2 uppercase">bibliothèque publique</h1>
+</header>
+
+@if (genres == null || category == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="category-header">
+        <h2>@category.icon @category.name</h2>
+    </div>
+    <div class="grid-container">
+        @foreach (var genre in genres)
+        {
+            <a class="grid-item" style="background-color:#@genre.bgColor" href="/category/@categoryID/genre/@genre.id">
+                <h3>@genre.name</h3>
+            </a>
+        }
+    </div>
+}
+
+@code {
+    [Parameter]
+    public int categoryID { get; set; }
+
+    private Categories? category;
+    private List<Genres>? genres;
+
+    [Inject]
+    private LibraryService LibraryService { get; set; } = default!;
+    [Inject]
+    private NavigationManager Navigation { get; set; } = default!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var categories = await LibraryService.GetCategoriesAsync();
+        if (categories == null || !categories.Any(c => c.id == categoryID))
+        {
+            Navigation.NavigateTo("/404");
+            return;
+        }
+
+        category = await LibraryService.GetCategoryAsync(categoryID);
+        genres = await LibraryService.GetGenresAsync();
+    }
+}

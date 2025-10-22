@@ -1,4 +1,4 @@
-﻿@page "/genre/{genreID:int}"
+﻿@page "/category/{categoryID:int}/genre/{genreID:int}"
 @rendermode InteractiveServer
 
 @if (genre == null)
@@ -11,11 +11,11 @@ else
 }
 
 <header class="bg-header bg-header-size2">
-    <a href="/" class="back-button">← Back</a>
+    <a href="/category/@categoryID" class="back-button">← Back</a>
     <h1 class="text-size2 uppercase">bibliothèque publique</h1>
 </header>
 
-@if (books == null || genre == null)
+@if (items == null || genre == null)
 {
     <p>Loading...</p>
 }
@@ -26,11 +26,11 @@ else
             <h3 class="genre uppercase">@genre.name</h3>
         </div>
         <div class="col-9">
-            @foreach (var book in books)
+            @foreach (var item in items)
             {
                 <div class="mb-3 uppercase book">
-                    <h2><strong>@book.title</strong></h2>
-                    <h4>@book.description</h4>
+                    <h2><strong>@item.title</strong></h2>
+                    <h4>@item.description</h4>
                 </div>
             }
         </div>
@@ -39,10 +39,13 @@ else
 
 @code {
     [Parameter]
+    public int categoryID { get; set; }
+
+    [Parameter]
     public int genreID { get; set; }
 
     private Genres? genre;
-    private List<Books>? books;
+    private List<Items>? items;
 
     [Inject]
     private LibraryService LibraryService { get; set; } = default!;
@@ -59,6 +62,6 @@ else
         }
 
         genre = await LibraryService.GetGenreAsync(genreID);
-        books = await LibraryService.GetBooksByGenreAsync(genreID);
+        items = await LibraryService.GetItemsByCategoryAndGenreAsync(categoryID, genreID);
     }
 }

@@ -1,14 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.WebHost.UseUrls("http://localhost:5068");
 
 // Register LibraryContext as a service
-builder.Services.AddDbContext<LibraryContext>();
+builder.Services.AddDbContext<LibraryContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
-await using var db = new LibraryContext();
-Console.WriteLine($"Database path: {db.DbPath}.");
+Console.WriteLine("Connected to SQL Server database.");
 
 app.MapGet("/", () => {
     var message = "Server is working";
@@ -16,7 +18,8 @@ app.MapGet("/", () => {
 });
 
 // Use the extension methods to map the endpoints
-app.MapBooksEndpoints();
+app.MapItemsEndpoints();
 app.MapGenresEndpoints();
+app.MapCategoriesEndpoints();
 
 app.Run();
